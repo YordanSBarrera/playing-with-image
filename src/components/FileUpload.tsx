@@ -1,4 +1,4 @@
-import { Stack } from "@mui/material";
+import { Stack, Typography } from "@mui/material";
 import { useRef } from "react";
 
 type FileUploadLinkProps = {
@@ -21,7 +21,17 @@ const FileUpload = ({ onFileSelect }: FileUploadLinkProps) => {
 
   return (
     <Stack spacing={2} alignItems="center">
-      <a onClick={handleLinkClick}>Upload Image</a>
+      <a onClick={handleLinkClick}>
+        <Typography
+          sx={{
+            textDecoration: "underline",
+            cursor: "pointer",
+            color: "blue",
+          }}
+        >
+          Upload Image
+        </Typography>
+      </a>
       <input
         ref={fileInputRef}
         type="file"
